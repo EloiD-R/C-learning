@@ -57,7 +57,7 @@ void askForTableNumbers(int table[],int numberOfValues){
     // ask for the numbers (depending on the table size)
     for(int loopIteration = LAST_VALUE_INDEX; loopIteration < numberOfValues + LAST_VALUE_INDEX ; loopIteration++){
         printf("Number %d > ", loopIteration);
-        scanf("%d", &table[loopIteration - LAST_VALUE_INDEX]);
+        scanf_s("%d", &table[loopIteration - LAST_VALUE_INDEX]);
     }
 }
 
@@ -99,32 +99,6 @@ void copyTableToAnother(int toCopyTable[], int copyInTable[], int numberOfValues
 }
 
 
-/*
-This function is an implementation of a bubble sorting algorithm which consists of repeatedly iterating through
-the input array, comparing adjacent elements, and swapping them if they are in the wrong order
- */
-void ascendingTableBubbleSort(int toSortTable[], int outputSortTable[], int numberOfValues) {
-    // Copy the first table to the output one
-    copyTableToAnother(toSortTable, outputSortTable, numberOfValues);
-
-    // Bubble sort algorithm to sort the values of the table in ascending order
-    // first loop
-    for (int loopIterations = 0; loopIterations < numberOfValues; loopIterations++) {
-        // nested loop
-        for (int NestedLoopIterations = 0; NestedLoopIterations < numberOfValues; NestedLoopIterations++) {
-            int NEXT_INDEX = NestedLoopIterations + 1;
-            // compare a value from outputSortTable to the next value in outputSortTable and swap values it if the first is greater
-            if (outputSortTable[NestedLoopIterations] > outputSortTable[NestedLoopIterations + NEXT_INDEX]) {
-                // create a temporary var to store the current value
-                int temp = outputSortTable[NestedLoopIterations];
-                // swap the table values
-                outputSortTable[NestedLoopIterations] = outputSortTable[NestedLoopIterations + NEXT_INDEX];
-                outputSortTable[NestedLoopIterations + NEXT_INDEX] = temp;
-            }
-        }
-    }
-}
-
 // This function is a security to ensure that any number will be greater than the table maximum value
 void maxTableReset(int table[], int tableSize, int tableMaxValue){
     // loop to iterate int the table
@@ -136,6 +110,33 @@ void maxTableReset(int table[], int tableSize, int tableMaxValue){
         }
     }
 }
+
+
+/*
+This function is an implementation of a bubble sorting algorithm which consists of repeatedly iterating through
+the input array, comparing adjacent elements, and swapping them if they are in the wrong order
+ */
+void ascendingTableBubbleSort(int toSortTable[], int outputSortTable[], int numberOfValues) {
+    // Copy the first table to the output one
+    copyTableToAnother(toSortTable, outputSortTable, numberOfValues);
+
+    // Bubble sort algorithm to sort the values of the table in ascending order
+    // first loop
+    for (int loopIterations = 0; loopIterations < numberOfValues - 1/*This magic number is here because the table begins at 0 not 1*/; loopIterations++) {
+        // nested loop
+        for (int nestedLoopIterations = 0; nestedLoopIterations < numberOfValues - loopIterations - 1 /*This magic number is here because the table begins at 0 not 1*/; nestedLoopIterations++) {
+            // compare a value from outputSortTable to the next value in outputSortTable and swap values it if the first is greater
+            if (outputSortTable[nestedLoopIterations] > outputSortTable[nestedLoopIterations + 1]) {
+                // create a temporary var to store the current value
+                int temp = outputSortTable[nestedLoopIterations];
+                // swap the table values
+                outputSortTable[nestedLoopIterations] = outputSortTable[nestedLoopIterations + 1];
+                outputSortTable[nestedLoopIterations + 1] = temp;
+            }
+        }
+    }
+}
+
 
 // Demonstrate the functions above
 void functionsDemo(){
@@ -174,9 +175,9 @@ void functionsDemo(){
 
     // display the content of the two tables before the copy of table in copyTable
     printf("\n\nTables before copy :");
-    printf("\nTable1 :");
+    printf("\nTable1 : ");
     displayTable(table1, TABLE_SIZE);
-    printf("\nTable copy :");
+    printf("\nTable copy : ");
     displayTable(tableCopy, TABLE_SIZE);
     copyTableToAnother(table1, tableCopy, TABLE_SIZE);
 
