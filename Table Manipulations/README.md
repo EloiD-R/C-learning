@@ -9,4 +9,4 @@
 
 > In the Tables Maipulation.h file there is prototypes for the Tables Manipulations.C file with comments to describe functions.
 
-> The Table Manipulations.exe file is compiled for windows so you'll need to recompile it if you are using an another OS, it uses the demo function of the main.c file.
+> The Table Manipulations.exe file is compiled for windows so you'll need to recompile it if you are using an another OS, it uses the demo function of the Tables Manipulations.c file.
