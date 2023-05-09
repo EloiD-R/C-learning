@@ -1,5 +1,7 @@
 # C-learning
-This repository contains all the projects i have made to learn C
+
+### This repository contains all the projects i have made to learn C :
+
 
 > #### Discord Seeker
 > This project is my very basic first project that ask you your discord tag then it compares it with GRISZ one. [➡️Repository⬅️](https://github.com/EloiD-R/C-learning/tree/main/Discord%20Seeker)
