@@ -1,7 +1,5 @@
 # Table Manipulations
 
-> At base those functions were an exercise from the book : "Apprenez à programmer en C 2nd édition" (traduction from french : "Learn to program in C 2nd edition") wich is edited by OpenClassroom, i ameliorated the exercise a bit
-
 > This is most complete and difficult project i made in c for the moment,
 > The project is composed of three files : ./src/main.c, ./src/functions.h and ./output/main.exe.
 
