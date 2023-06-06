@@ -1,12 +1,18 @@
+/*
+    ✏️Wrote by GRISZ on 06/2023,
+    Description : This file contains the functions to pick a random word from a dictionary file,,
+    Contact :
+        Discord : !!-GRISZ-!!#2705
+        Mail : griszou12@gmail.com
+        Github : https://github.com/eloiD-R/
+    Link to file in project repo : https://github.com/eloiD-R/.
+*/
 #include "dictionary.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
 
 
+// Generate the random word, then return it.
 char* getWord() {
-    FILE* dictionaryFile = fopen("C:\\Users\\eloid\\OneDrive\\hangman game\\output\\dictionary.txt", "r");
+    FILE* dictionaryFile = fopen("dictionary.txt", "r");
     if (dictionaryFile == NULL) {
         printf("Error opening file.\n");
         return NULL;
@@ -36,6 +42,7 @@ char* getWord() {
     return word;
 }
 
+// Generate a random number that can be used as a random line to generate a random line.
 int getRandomLine() {
     srand(time(NULL));
     int randomLine = rand() % 51;

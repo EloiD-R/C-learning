@@ -1,8 +1,4 @@
 #include "game.h"
-#include <ctype.h>
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 // This function returns the random word.
 char* generateRandomWord(){

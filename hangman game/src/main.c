@@ -1,10 +1,11 @@
 /*
-    Wrote by GRISZ on 06/2023, 
-    Description : This program is a hangman game,
+    ✏️Wrote by GRISZ on 06/2023,
+    Description : This file contains the code that permit the program to run correctly (it links the functions from game and dictionary files),,
     Contact :
-        Discord : GRISZ#2705
+        Discord : !!-GRISZ-!!#2705
         Mail : griszou12@gmail.com
         Github : https://github.com/eloiD-R/
+    Link to file in project repo : https://github.com/eloiD-R/.
 */
 
 #include "main.h"
